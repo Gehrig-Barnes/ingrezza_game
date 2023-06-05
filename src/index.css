@@ -91,15 +91,32 @@ body {
 }
 
 #modal {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 150%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
   background-color: rgb(136, 156, 168);
-  padding: 170px;
+  padding: 180px;
   padding-left: 38%;
   padding-right: 38%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 35px;
 }
+
+#modalHeader{
+  position: absolute;
+  top: .2px; /* Position the element at the top of the parent */
+  margin-top: 0px; /* Adjust the negative margin to move the element further upwards */
+  background-color: rgb(37, 42, 89);
+  padding: 10px;
+  left:0;
+  border-radius: 35px 35px 0px 0px;
+  right: 0%;
+  padding-bottom:5%;
+  
+}
+
+
+
+
