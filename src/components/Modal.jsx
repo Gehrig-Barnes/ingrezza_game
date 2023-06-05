@@ -1,5 +1,8 @@
-import React from "react";
-function Modal({ closeModal }) {
+import React, {useState} from "react";
+import questionData from "../questionData.js";
+function Modal({ closeModal}) {
+    const [data, setData] = useState(questionData)
+    const [questIndex, setQuestIndex] = useState(0)
   return (
     <div id="modal">
       <div id="modalHeader">
@@ -20,13 +23,21 @@ function Modal({ closeModal }) {
               id="quizImage"
             />
             <div className="question">
-              <p id="whichQuestion">Question 1 of 5</p>
-              <p id="tf"><b>TRUE OR FALSE:</b></p>
-              <p id="quest">The movements in this video show tardive dyskinesia (TD).</p>
+              <p id="whichQuestion">Question {questIndex + 1} of 5</p>
+              <p id="tf">
+                <b>TRUE OR FALSE:</b>
+              </p>
+              <p id="quest">
+                {data[questIndex].question}
+              </p>
             </div>
             <div id="trueOrFalse">
-              <button id="true"><b>TRUE</b></button>
-              <button id="false"><b>FALSE</b></button>
+              <button id="true">
+                <b>TRUE</b>
+              </button>
+              <button id="false">
+                <b>FALSE</b>
+              </button>
             </div>
             <img
               src="https://i.makeagif.com/media/2-15-2023/ww83wG.gif"

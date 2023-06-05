@@ -2,8 +2,10 @@ import "./App.css";
 import React, {useState} from "react";
 import Modal from "./components/Modal";
 
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   const openModal = () => {
     setIsModalOpen(true);
