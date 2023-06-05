@@ -248,4 +248,22 @@ body {
 }
 
 
+#next{
+  border-radius: 29px; /* Adjust the value to control the roundness */
+  width: 190px; /* Adjust the width to fit your button content */
+  height: 62px;
+  border: none;
+  background-color: white;
+  font-size: 15px;
+  cursor: pointer;
+  color: rgb(9, 9, 78);
+  position: absolute;
+  top: 20px;
+  left: 70%;
+  right: 0px;
+}
 
+#next:hover{
+  background-color:rgb(136, 156, 168);
+  
+}

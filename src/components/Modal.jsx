@@ -1,14 +1,37 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import questionData from "../questionData.js";
-function Modal({ closeModal}) {
-    const [data, setData] = useState(questionData)
-    const [questIndex, setQuestIndex] = useState(0)
+function Modal({ closeModal }) {
+  const [data, setData] = useState(questionData);
+  const [questIndex, setQuestIndex] = useState(0);
+  const [next, setNext] = useState(false);
+
+  function setNextToTrue(){
+    
+    if(next === false){
+        setNext(true)
+    }
+  
+    
+  }
+
+  function setNextToFalse(){
+    if(questIndex === 4) return;
+    if(next === true){
+        setNext(false)
+    }
+    setQuestIndex(prev => prev + 1)
+  }
   return (
     <div id="modal">
       <div id="modalHeader">
         <h2 id="modalHeadText">
           Take the TD Challenge: Assessment and diagnosis
         </h2>
+        {next ? (
+          <button onClick={setNextToFalse}id="next">
+            <b>NEXT QUESTION</b>
+          </button>
+        ) : null}
         <span className="close" onClick={closeModal}>
           &times;
         </span>
@@ -27,15 +50,13 @@ function Modal({ closeModal}) {
               <p id="tf">
                 <b>TRUE OR FALSE:</b>
               </p>
-              <p id="quest">
-                {data[questIndex].question}
-              </p>
+              <p id="quest">{data[questIndex].question}</p>
             </div>
             <div id="trueOrFalse">
-              <button id="true">
+              <button onClick={setNextToTrue}id="true">
                 <b>TRUE</b>
               </button>
-              <button id="false">
+              <button onClick={setNextToTrue}id="false">
                 <b>FALSE</b>
               </button>
             </div>
