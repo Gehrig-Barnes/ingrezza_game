@@ -3,6 +3,7 @@ function Modal({ closeModal }) {
   return (
     <div id="modal">
       <div id="modalHeader">
+        <h2 id="modalHeadText">Take the TD Challenge: Assessment and diagnosis</h2>
         <span className="close" onClick={closeModal}>
           &times;
         </span>

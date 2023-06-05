@@ -98,8 +98,8 @@ body {
   z-index: 9999;
   background-color: rgb(136, 156, 168);
   padding: 180px;
-  padding-left: 38%;
-  padding-right: 38%;
+  padding-left: 39%;
+  padding-right: 39%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 35px;
 }
@@ -112,9 +112,34 @@ body {
   padding: 10px;
   left:0;
   border-radius: 35px 35px 0px 0px;
-  right: 0%;
-  padding-bottom:5%;
+  right: 0;
+  padding-bottom:7.5%;
+}
+
+.close{
+  position: absolute;
+  top: 26px;
+  left:94%;
+  right: 0px;
+  background-color: rgb(217, 217, 217);
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+#modalHeadText{
+  position: absolute;
+  top: 20px;
+  left:3%;
+  right: 0px;
+  white-space: nowrap;
   
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+ 
 }
 
 
