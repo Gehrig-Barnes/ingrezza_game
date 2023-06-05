@@ -15,11 +15,11 @@ function App() {
           <h2 id="title">
             <strong>Take the TD Challenge: Assessment and diagnosis</strong>
           </h2>
-          <p id="description">
-            Can you differentiate tardive dyskinesia from drug-induced
-            parkinsonism and other acute drug-induced movement disorders?{" "}
-            <strong>Put your knowledge to the test.</strong>
+          <p className="description">
+          Can you differentiate tardive dyskinesia from drug-induced parkinsonism and other acute 
           </p>
+          <p className="description">drug-induced movement disorders?<b>Put your knowledge to the test.</b></p>
+          
         </div>
       </div>
     </div>
