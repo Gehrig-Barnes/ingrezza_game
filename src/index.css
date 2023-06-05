@@ -74,7 +74,7 @@
   cursor: pointer;
 }
 
-#start :hover{
-  background-color: navy;
+#start:hover{
+  background-color: rgb(9, 9, 78);
   color: white;
 }
