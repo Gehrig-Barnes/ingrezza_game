@@ -62,3 +62,19 @@
   white-space: nowrap;
   margin-bottom: -.001rem;
 }
+
+#start{
+  margin-left: 4rem;
+  border-radius: 29px; /* Adjust the value to control the roundness */
+  width: 174px; /* Adjust the width to fit your button content */
+  height: 60px;
+  border: none;
+  color: rgb(206, 29, 29);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#start :hover{
+  background-color: navy;
+  color: white;
+}

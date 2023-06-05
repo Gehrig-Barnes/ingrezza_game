@@ -20,6 +20,7 @@ function App() {
           </p>
           <p className="description" id="desTwo">drug-induced movement disorders?<b>Put your knowledge to the test.</b></p>
         </div>
+        <button id="start"><b>GET STARTED</b></button>
       </div>
     </div>
   );
