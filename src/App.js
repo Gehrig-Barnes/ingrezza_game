@@ -1,8 +1,22 @@
 import "./App.css";
+import React, {useState} from "react";
+import Modal from "./components/Modal";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    
+  };
   return (
-    <div className="App">
+    <div className={`App`}>
+      {isModalOpen && <div className="dimmed-overlay" />}
       <div id="box">
         <div id="logo">
           <img
@@ -20,8 +34,11 @@ function App() {
           </p>
           <p className="description" id="desTwo">drug-induced movement disorders?<b>Put your knowledge to the test.</b></p>
         </div>
-        <button id="start"><b>GET STARTED</b></button>
+        <button onClick={openModal} id="start"><b>GET STARTED</b></button>
       </div>
+      {isModalOpen &&(
+        <Modal closeModal={closeModal}/>
+      ) }
     </div>
   );
 }
