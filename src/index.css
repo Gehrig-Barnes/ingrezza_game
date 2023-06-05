@@ -86,7 +86,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control the darkness */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the alpha value to control the darkness */
   z-index: 9998; /* Ensure the overlay appears below the modal */
 }
 
@@ -97,29 +102,29 @@ body {
   transform: translate(-50%, -50%);
   z-index: 9999;
   background-color: rgb(136, 156, 168);
-  padding: 180px;
-  padding-left: 39%;
-  padding-right: 39%;
+  padding: 30px;
+  padding-left: 15%;
+  padding-right: 15%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 35px;
 }
 
-#modalHeader{
+#modalHeader {
   position: absolute;
-  top: .2px; /* Position the element at the top of the parent */
+  top: 0.2px; /* Position the element at the top of the parent */
   margin-top: 0px; /* Adjust the negative margin to move the element further upwards */
   background-color: rgb(37, 42, 89);
   padding: 10px;
-  left:0;
+  left: 0;
   border-radius: 35px 35px 0px 0px;
   right: 0;
-  padding-bottom:7.5%;
+  padding-bottom: 7.5%;
 }
 
-.close{
+.close {
   position: absolute;
   top: 26px;
-  left:94%;
+  left: 94%;
   right: 0px;
   background-color: rgb(217, 217, 217);
   width: 45px;
@@ -129,19 +134,118 @@ body {
   cursor: pointer;
 }
 
-#modalHeadText{
+#modalHeadText {
   position: absolute;
   top: 20px;
-  left:3%;
+  left: 3%;
   right: 0px;
   white-space: nowrap;
-  
+
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
- 
 }
 
+#quizImage {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+}
+
+
+.modal-content {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-top: 12%;
+  width: 200%;
+}
+
+.grid-container {
+ 
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: -5px;
+}
+
+#quizImage {
+  margin-left: -35%;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  width: 150px;
+  height: 150px;
+  
+}
+
+.question {
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: -95%;
+
+}
+
+.question p{
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+}
+
+#whichQuestion{
+  font-size: 25px;
+}
+
+#tf{
+  font-size: 25px;
+}
+
+#quest{
+  font-size: 20px;
+}
+
+#trueOrFalse {
+  grid-column: 3;
+  grid-row: 1;
+  margin-left: -250%;
+}
+
+#gifImage {
+  grid-column: 1 / 2;
+  width: 500px;
+  height: 260px;
+  margin-left: 0%;
+}
+
+#true{
+  border-radius: 29px; /* Adjust the value to control the roundness */
+  width: 174px; /* Adjust the width to fit your button content */
+  height: 62px;
+  border: none;
+  color: rgb(206, 29, 29);
+  font-size: 15px;
+  cursor: pointer;
+  margin: 1.5%;
+}
+#false{
+  border-radius: 29px; /* Adjust the value to control the roundness */
+  width: 174px; /* Adjust the width to fit your button content */
+  height: 62px;
+  border: none;
+  color: rgb(206, 29, 29);
+  font-size: 15px;
+  cursor: pointer;
+  margin: 1.5%;
+
+}
+
+#true:hover {
+  background-color: rgb(9, 9, 78);
+  color: white;
+}
+#false:hover {
+  background-color: rgb(9, 9, 78);
+  color: white;
+}
 
 
 
