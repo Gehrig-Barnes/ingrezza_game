@@ -1,8 +1,21 @@
 #box{
+  position: relative;
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto; 
   width: 80rem;
   height: 10.6rem;
   background-color: rgb(136, 156, 168);
+}
+
+#logo{
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  left: 50px; /* Adjust the value to control the space on the left */
+  top: 50%;
+  transform: translateY(-50%);
+  border: 20px solid rgb(136, 156, 168);
 }
