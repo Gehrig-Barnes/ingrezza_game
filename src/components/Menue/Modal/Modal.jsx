@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import questionData from "../../../questionData.js";
-import Answer from "./Answer/Answer.jsx";
+import Score from "./Score/Score.jsx";
+import ModalContent from "./ModalContent/ModalContent.jsx";
 
 function Modal({ closeModal }) {
   const [data, setData] = useState(questionData);
@@ -10,6 +11,8 @@ function Modal({ closeModal }) {
   const [isDisabled, setIsDisabled] = useState(false);
   const [falseFeedBack, setFalseFeedBack] = useState("FALSE");
   const [trueFeedBack, setTrueFeedBack] = useState("TRUE");
+  const [showScore, setShowScore] = useState(false);
+  const [showNextButton, setShowNextButton] = useState(true);
 
   function handleTrueClick(e) {
     const value = e.target.value;
@@ -23,7 +26,9 @@ function Modal({ closeModal }) {
       setTrueFeedBack(wrongTrue);
     }
     setIsDisabled(true);
-    if (next === false) {
+    if (questIndex === 4) {
+      setShowNextButton(false);
+    } else if (next === false) {
       setNext(true);
     }
   }
@@ -39,7 +44,9 @@ function Modal({ closeModal }) {
       setFalseFeedBack(wrongFalse);
     }
     setIsDisabled(true);
-    if (next === false) {
+    if (questIndex === 4) {
+      setShowNextButton(false);
+    } else if (next === false) {
       setNext(true);
     }
   }
@@ -54,71 +61,27 @@ function Modal({ closeModal }) {
     }
     setQuestIndex((prev) => prev + 1);
   }
+
   return (
     <div id="modal">
-      <div id="modalHeader">
-        <h2 id="modalHeadText">
-          Take the TD Challenge: Assessment and diagnosis
-        </h2>
-        {next ? (
-          <button onClick={setNextToFalse} id="next">
-            <b>NEXT QUESTION</b>
-          </button>
-        ) : null}
-        <span className="close" onClick={closeModal}>
-          &times;
-        </span>
-      </div>
-      <div className="modal-overlay" onClick={closeModal}></div>
-      <div className="modal-wrapper">
-        <div className="modal-content">
-          <div className="grid-container">
-            <div id="logo_box">
-              <img
-                src="https://media.istockphoto.com/id/1297460438/vector/funny-comic-cartoon-brain-character-with-magnifier.jpg?s=612x612&w=0&k=20&c=gbQswIYSDpCOpdnbp9nkTHczmer0rNAINOIeZoHx7zM="
-                alt="brain_image"
-                id="quizImage"
-              />
-            </div>
-            <div className="question">
-              <p id="whichQuestion">Question {questIndex + 1} of 5</p>
-              <p id="tf">
-                <b>TRUE OR FALSE:</b>
-              </p>
-              <p id="quest">{data[questIndex].question}</p>
-            </div>
-            <div id="trueOrFalse">
-              <button
-                onClick={handleTrueClick}
-                id="true"
-                value="TRUE"
-                disabled={isDisabled}
-              >
-                {trueFeedBack}
-              </button>
-              <button
-                onClick={handleFalseClick}
-                id="false"
-                value="FALSE"
-                disabled={isDisabled}
-              >
-                {falseFeedBack}
-              </button>
-            </div>
-            <div id="gifContainer">
-              <img
-                src={data[questIndex].gif}
-                alt="question_image"
-                id="gifImage"
-              />
-            </div>
-            {next? (<div id="ansContainer">
-              {<Answer data={data} questIndex={questIndex} />}
-            </div> ) : null}
-            
-          </div>
-        </div>
-      </div>
+      {showScore ? (
+        <Score closeModal={closeModal}/>
+      ) : (
+        <ModalContent
+          showNextButton={showNextButton}
+          setShowScore={setShowScore}
+          next={next}
+          setNextToFalse={setNextToFalse}
+          closeModal={closeModal}
+          questIndex={questIndex}
+          data={data}
+          handleFalseClick={handleFalseClick}
+          handleTrueClick={handleTrueClick}
+          isDisabled={isDisabled}
+          trueFeedBack={trueFeedBack}
+          falseFeedBack={falseFeedBack}
+        />
+      )}
     </div>
   );
 }
