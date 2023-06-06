@@ -324,8 +324,8 @@ circle{
  
   stroke: url(#GradientColor);
   stroke-width: 18px;
-  stroke-dasharray: 0;
-  stroke-dashoffset: 470;
+  stroke-dasharray:265;
+  stroke-dashoffset: 0;
 
   
 }
@@ -333,7 +333,7 @@ circle{
 svg{
   position: absolute;
   left:63.7%;
-  bottom:47.6%;
+  bottom:47.55%;
 
 }
 
