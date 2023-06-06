@@ -181,6 +181,7 @@ grid-template-rows: repeat(2, 1fr) repeat(3, 0);
 .question {
   grid-area: 1 / 2 / 2 / 4;
   justify-self: start;
+ 
 }
 
 .question p {
@@ -232,6 +233,7 @@ grid-template-rows: repeat(2, 1fr) repeat(3, 0);
   cursor: pointer;
   margin: 2%;
   margin-right: 30px;
+  font-weight: bold;
 }
 #false {
   border-radius: 29px; 
@@ -242,6 +244,7 @@ grid-template-rows: repeat(2, 1fr) repeat(3, 0);
   font-size: 15px;
   cursor: pointer;
   margin: 1.5%;
+  font-weight: bold;
 }
 
 #true:hover {
