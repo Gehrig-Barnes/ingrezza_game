@@ -24,11 +24,11 @@ function Modal({ closeModal }) {
         <h2 id="modalHeadText">
           Take the TD Challenge: Assessment and diagnosis
         </h2>
-        {/* {next ? (
+        {next ? (
           <button onClick={setNextToFalse}id="next">
             <b>NEXT QUESTION</b>
           </button>
-        ) : null} */}
+        ) : null}
         <span className="close" onClick={closeModal}>
           &times;
         </span>
