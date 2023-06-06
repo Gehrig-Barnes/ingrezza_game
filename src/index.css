@@ -285,5 +285,14 @@ grid-template-rows: repeat(2, 1fr) repeat(3, 0);
 
 #ansH3 {
   color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  margin-left: 15px;
   
+}
+
+.textTheme{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  margin-left: 15px;
 }
