@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import questionData from "../questionData.js";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
+import Answer from "./Answer.jsx";
+
 function Modal({ closeModal }) {
   const [data, setData] = useState(questionData);
   const [questIndex, setQuestIndex] = useState(0);
@@ -17,7 +18,7 @@ function Modal({ closeModal }) {
 
     if (data[questIndex].answer === value) {
       setTrueFeedBack(correctTrue);
-      setTotal(prev => prev+=1)
+      setTotal((prev) => (prev += 1));
     } else {
       setTrueFeedBack(wrongTrue);
     }
@@ -33,7 +34,7 @@ function Modal({ closeModal }) {
     const correctFalse = "FALSE ✔";
     if (data[questIndex].answer === value) {
       setFalseFeedBack(correctFalse);
-      setTotal(prev => prev+=1)
+      setTotal((prev) => (prev += 1));
     } else {
       setFalseFeedBack(wrongFalse);
     }
@@ -43,7 +44,6 @@ function Modal({ closeModal }) {
     }
   }
 
-  console.log(total)
   function setNextToFalse() {
     if (questIndex === 4) return;
     setIsDisabled(false);
@@ -112,6 +112,10 @@ function Modal({ closeModal }) {
                 id="gifImage"
               />
             </div>
+            {next? (<div id="ansContainer">
+              {<Answer data={data} questIndex={questIndex} />}
+            </div> ) : null}
+            
           </div>
         </div>
       </div>
