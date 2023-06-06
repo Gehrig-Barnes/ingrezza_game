@@ -91,7 +91,7 @@ function Modal({ closeModal }) {
               <button
                 onClick={handleTrueClick}
                 id="true"
-                value="true"
+                value="TRUE"
                 disabled={isDisabled}
               >
                 {trueFeedBack}
@@ -99,7 +99,7 @@ function Modal({ closeModal }) {
               <button
                 onClick={handleFalseClick}
                 id="false"
-                value="false"
+                value="FALSE"
                 disabled={isDisabled}
               >
                 {falseFeedBack}

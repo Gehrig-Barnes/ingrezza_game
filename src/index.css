@@ -282,3 +282,8 @@ grid-template-rows: repeat(2, 1fr) repeat(3, 0);
   margin-left: 20px;
   height: 230px;
 }
+
+#ansH3 {
+  color: red;
+  
+}
