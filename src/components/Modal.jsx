@@ -17,6 +17,7 @@ function Modal({ closeModal }) {
 
     if (data[questIndex].answer === value) {
       setTrueFeedBack(correctTrue);
+      setTotal(prev => prev+=1)
     } else {
       setTrueFeedBack(wrongTrue);
     }
@@ -32,6 +33,7 @@ function Modal({ closeModal }) {
     const correctFalse = "FALSE ✔";
     if (data[questIndex].answer === value) {
       setFalseFeedBack(correctFalse);
+      setTotal(prev => prev+=1)
     } else {
       setFalseFeedBack(wrongFalse);
     }
@@ -41,6 +43,7 @@ function Modal({ closeModal }) {
     }
   }
 
+  console.log(total)
   function setNextToFalse() {
     if (questIndex === 4) return;
     setIsDisabled(false);
