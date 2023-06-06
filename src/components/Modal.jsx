@@ -5,21 +5,18 @@ function Modal({ closeModal }) {
   const [questIndex, setQuestIndex] = useState(0);
   const [next, setNext] = useState(false);
 
-  function setNextToTrue(){
-    
-    if(next === false){
-        setNext(true)
+  function setNextToTrue() {
+    if (next === false) {
+      setNext(true);
     }
-  
-    
   }
 
-  function setNextToFalse(){
-    if(questIndex === 4) return;
-    if(next === true){
-        setNext(false)
+  function setNextToFalse() {
+    if (questIndex === 4) return;
+    if (next === true) {
+      setNext(false);
     }
-    setQuestIndex(prev => prev + 1)
+    setQuestIndex((prev) => prev + 1);
   }
   return (
     <div id="modal">
@@ -27,11 +24,11 @@ function Modal({ closeModal }) {
         <h2 id="modalHeadText">
           Take the TD Challenge: Assessment and diagnosis
         </h2>
-        {next ? (
+        {/* {next ? (
           <button onClick={setNextToFalse}id="next">
             <b>NEXT QUESTION</b>
           </button>
-        ) : null}
+        ) : null} */}
         <span className="close" onClick={closeModal}>
           &times;
         </span>
@@ -40,11 +37,13 @@ function Modal({ closeModal }) {
       <div className="modal-wrapper">
         <div className="modal-content">
           <div className="grid-container">
-            <img
+            <div id="logo_box">
+              <img
               src="https://media.istockphoto.com/id/1297460438/vector/funny-comic-cartoon-brain-character-with-magnifier.jpg?s=612x612&w=0&k=20&c=gbQswIYSDpCOpdnbp9nkTHczmer0rNAINOIeZoHx7zM="
               alt="brain_image"
               id="quizImage"
             />
+            </div>
             <div className="question">
               <p id="whichQuestion">Question {questIndex + 1} of 5</p>
               <p id="tf">
@@ -60,11 +59,13 @@ function Modal({ closeModal }) {
                 <b>FALSE</b>
               </button>
             </div>
-            <img
+            <div id="gifContainer">
+              <img
               src="https://i.makeagif.com/media/2-15-2023/ww83wG.gif"
               alt="question_image"
               id="gifImage"
             />
+            </div>
           </div>
         </div>
       </div>
