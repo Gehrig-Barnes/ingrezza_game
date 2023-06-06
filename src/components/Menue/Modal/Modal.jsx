@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import questionData from "../questionData.js";
-import Answer from "./Answer.jsx";
+import questionData from "../../../questionData.js";
+import Answer from "./Answer/Answer.jsx";
 
 function Modal({ closeModal }) {
   const [data, setData] = useState(questionData);

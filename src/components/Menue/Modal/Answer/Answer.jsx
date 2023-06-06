@@ -1,9 +1,9 @@
 import React from "react";
-import AnsOne from "./AnsOne";
-import AnsTwo from "./AnsTwo";
-import AnsThree from "./AnsThree";
-import AnsFour from "./AnsFour";
-import AnsFive from "./AnsFive";
+import AnsOne from "./allAnswers/AnsOne"
+import AnsTwo from "./allAnswers/AnsTwo";
+import AnsThree from "./allAnswers/AnsThree";
+import AnsFour from "./allAnswers/AnsFour";
+import AnsFive from "./allAnswers/AnsFive";
 
 function Answer({ data, questIndex }) {
 
