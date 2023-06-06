@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import questionData from "../../../questionData.js";
 import Score from "./Score/Score.jsx";
 import ModalContent from "./ModalContent/ModalContent.jsx";
@@ -13,6 +13,7 @@ function Modal({ closeModal }) {
   const [trueFeedBack, setTrueFeedBack] = useState("TRUE");
   const [showScore, setShowScore] = useState(false);
   const [showNextButton, setShowNextButton] = useState(true);
+  const [finalAnswer, setFinalAnswer] = useState(false)
 
   function handleTrueClick(e) {
     const value = e.target.value;
@@ -30,6 +31,9 @@ function Modal({ closeModal }) {
       setShowNextButton(false);
     } else if (next === false) {
       setNext(true);
+    }
+    if(questIndex === 4){
+      setFinalAnswer(true)
     }
   }
 
@@ -49,6 +53,9 @@ function Modal({ closeModal }) {
     } else if (next === false) {
       setNext(true);
     }
+    if(questIndex === 4){
+      setFinalAnswer(true)
+    }
   }
 
   function setNextToFalse() {
@@ -60,6 +67,7 @@ function Modal({ closeModal }) {
       setNext(false);
     }
     setQuestIndex((prev) => prev + 1);
+    
   }
 
   return (
@@ -69,7 +77,7 @@ function Modal({ closeModal }) {
       ) : (
         <ModalContent
           showNextButton={showNextButton}
-          setShowScore={setShowScore}
+          
           next={next}
           setNextToFalse={setNextToFalse}
           closeModal={closeModal}
@@ -80,6 +88,9 @@ function Modal({ closeModal }) {
           isDisabled={isDisabled}
           trueFeedBack={trueFeedBack}
           falseFeedBack={falseFeedBack}
+          showScore={showScore}
+          finalAnswer={finalAnswer}
+          setShowScore={setShowScore}
         />
       )}
     </div>

@@ -13,7 +13,8 @@ function ModalContent({
   trueFeedBack,
   falseFeedBack,
   setShowScore,
-  showNextButton
+  showNextButton,
+  finalAnswer
 }) {
   function renderGetScore() {
     if (showNextButton) {
@@ -85,6 +86,11 @@ function ModalContent({
               />
             </div>
             {next ? (
+              <div id="ansContainer">
+                {<Answer data={data} questIndex={questIndex} />}
+              </div>
+            ) : null}
+            {finalAnswer ? (
               <div id="ansContainer">
                 {<Answer data={data} questIndex={questIndex} />}
               </div>
