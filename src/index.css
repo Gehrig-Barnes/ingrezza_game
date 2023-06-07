@@ -304,7 +304,6 @@ body {
   top: 0%;
   left: 65%;
   background-color: rgb(136, 156, 168);
-  
 }
 
 .innerCircle {
@@ -318,23 +317,45 @@ body {
   border-radius: 50%;
 }
 
-circle{
+#one {
   fill: none;
- 
- 
   stroke: url(#GradientColor);
   stroke-width: 18px;
-  stroke-dasharray:265;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 560;
+}
+#two{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 18px;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 420;
+}
+#three{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 18px;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 280;
+}
+#four{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 18px;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 120;
+}
+
+#five{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 18px;
+  stroke-dasharray: 700;
   stroke-dashoffset: 0;
-
-  
 }
 
-svg{
+svg {
   position: absolute;
-  left:63.7%;
-  bottom:47.55%;
-
+  left: 63.7%;
+  bottom: 47.55%;
 }
-
-

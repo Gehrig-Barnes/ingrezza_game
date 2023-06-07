@@ -1,6 +1,6 @@
 import React from "react";
 
-function Score({ closeModal }) {
+function Score({ closeModal,total, circleId }) {
   return (
     <>
       <div id="modalHeader">
@@ -26,7 +26,7 @@ function Score({ closeModal }) {
                 <stop offset="100%" stop-color="#673ab7" />
               </linearGradient>
             </defs>
-            <circle cx="150" cy="150" r="112.5" stroke-linecap="round" />
+            <circle id={circleId} cx="150" cy="150" r="112.5" stroke-linecap="round" />
           </svg>
     </>
   );

@@ -13,7 +13,26 @@ function Modal({ closeModal }) {
   const [trueFeedBack, setTrueFeedBack] = useState("TRUE");
   const [showScore, setShowScore] = useState(false);
   const [showNextButton, setShowNextButton] = useState(true);
-  const [finalAnswer, setFinalAnswer] = useState(false)
+  const [finalAnswer, setFinalAnswer] = useState(false);
+  const [circleId, setCircleId] = useState("")
+
+  function handleCircleId(){
+    if(total === 1){
+      setCircleId("one")
+    }
+    if(total === 2){
+      setCircleId("two")
+    }
+    if(total === 3){
+      setCircleId("three")
+    }
+    if(total === 4){
+      setCircleId("four")
+    }
+    if(total === 5){
+      setCircleId("five")
+    }
+  }
 
   function handleTrueClick(e) {
     const value = e.target.value;
@@ -32,8 +51,8 @@ function Modal({ closeModal }) {
     } else if (next === false) {
       setNext(true);
     }
-    if(questIndex === 4){
-      setFinalAnswer(true)
+    if (questIndex === 4) {
+      setFinalAnswer(true);
     }
   }
 
@@ -53,8 +72,8 @@ function Modal({ closeModal }) {
     } else if (next === false) {
       setNext(true);
     }
-    if(questIndex === 4){
-      setFinalAnswer(true)
+    if (questIndex === 4) {
+      setFinalAnswer(true);
     }
   }
 
@@ -67,17 +86,15 @@ function Modal({ closeModal }) {
       setNext(false);
     }
     setQuestIndex((prev) => prev + 1);
-    
   }
 
   return (
     <div id="modal">
       {showScore ? (
-        <Score closeModal={closeModal}/>
+        <Score closeModal={closeModal} total={total} circleId={circleId}/>
       ) : (
         <ModalContent
           showNextButton={showNextButton}
-          
           next={next}
           setNextToFalse={setNextToFalse}
           closeModal={closeModal}
@@ -91,6 +108,7 @@ function Modal({ closeModal }) {
           showScore={showScore}
           finalAnswer={finalAnswer}
           setShowScore={setShowScore}
+          handleCircleId={handleCircleId}
         />
       )}
     </div>

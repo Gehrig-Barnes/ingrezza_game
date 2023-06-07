@@ -14,7 +14,8 @@ function ModalContent({
   falseFeedBack,
   setShowScore,
   showNextButton,
-  finalAnswer
+  finalAnswer,
+  handleCircleId,
 }) {
   function renderGetScore() {
     if (showNextButton) {
@@ -25,7 +26,13 @@ function ModalContent({
       ) : null;
     } else {
       return (
-        <button id="next" onClick={()=> setShowScore(true)}>
+        <button
+          id="next"
+          onClick={() => {
+            handleCircleId();
+            setShowScore(true);
+          }}
+        >
           <b>GET YOUR SCORE</b>
         </button>
       );
