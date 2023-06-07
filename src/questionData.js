@@ -21,13 +21,13 @@ const questions = [
   {
     id: 4,
     question: "The movements in this video show tardive dyskinesia (TD).",
-    answer: 'TRUE',
+    answer: 'FALSE',
     gif: "https://media.tenor.com/-UrD8zExORAAAAAC/tremor-hands.gif",
   },
   {
     id: 5,
     question: "The movements in this video show tardive dyskinesia (TD).",
-    answer: 'FALSE',
+    answer: 'TRUE',
     gif: "https://i.makeagif.com/media/4-10-2016/EuhHag.gif",
   },
   
