@@ -1,0 +1,19 @@
+.cards{
+    margin-top: 5%;
+}
+
+.column{
+    background-color: grey;
+    width: 150px;
+    height: 210px;
+    margin: 3%;
+    box-sizing: border-box;
+    border-radius: 5%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    
+    
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}

@@ -9,7 +9,7 @@ function Score({ closeModal, total, circleId }) {
         </span>
       </div>
       <h1 id="completed">You’ve completed the TD Challenge: Assessment and diagnosis</h1>
-      <button id="exit"><b>EXIT QUIZ</b></button>
+      <button onClick={closeModal}id="exit"><b>EXIT QUIZ</b></button>
       <div id="scoreCircle">
         <div class="innerCircle">
           <h1 id="final_score">{total}/5 correct</h1>
